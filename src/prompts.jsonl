@@ -1,0 +1,5 @@
+{"label":"short_instruction","prompt":"List three uses of Singular Value Decomposition in machine learning."}
+{"label":"long_instruction","prompt":"You are a helpful assistant. Explain, in ~1200-1600 tokens, the end-to-end process of preparing, filing, and reviewing a public company 10-K, including roles, timelines, and common pitfalls."}
+{"label":"math_gsm8k","prompt":"A store sells pencils in packs of 4 for $3. A class needs 56 pencils. What is the minimum cost? Show the calculation then the final answer."}
+{"label":"code_humaneval","prompt":"Write a Python function fib(n) that returns the nth Fibonacci number using dynamic programming with O(n) time and O(1) extra space."}
+{"label":"chat_multi_turn","prompt":"Pretend we are in a planning meeting. Draft a short, 4-step plan to launch a new customer feedback feature next quarter."}
