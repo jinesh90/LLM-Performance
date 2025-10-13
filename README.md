@@ -130,3 +130,126 @@ curl -s -X POST http://127.0.0.1:11434/v1/chat/completions \
   -d '{"model":"gpt-oss:20b","messages":[{"role":"user","content":"Hello!"}]}'
 ```
 
+
+# What to Measure for LLM Performance
+
+## ***TTFT***
+
+What is TTFT?
+```
+Time to First Token
+TTFT ≈ (queueing) 
+     + (request parse + auth + rate-limit) 
+     + (prompt preprocess: tokenization, truncation, routing) 
+     + (KV-cache allocation/fill or retrieval from cache) 
+     + (model graph warmup / compile / load-once costs if cold) 
+     + (first forward pass latency up to token #1)
+```
+
+What is “snappiness”?
+
+“Snappiness” is the perceived responsiveness of a chat/app. It’s mostly determined by:
+
+TTFT (how quickly the first token appears), and Inter-token latency (ITL)/Time-per-output-token (TPOT) once streaming starts (how smoothly tokens arrive), plus
+UI behavior (does text stream immediately, are partials flushed frequently), and Tail behavior (does it stall near the end due to long logits sampling or safety/rerank passes).
+
+You can think of snappiness as:
+```
+snappiness ∝ 1 / (TTFT + jitter_in_ITL + UI_flush_delay + tail_stall)
+```
+
+Example timeline (interactive request)
+```
+t0        send()
+t0+20ms   request parsed, auth checked
+t0+40ms   tokenization complete
+t0+90ms   scheduler admits to GPU; KV allocated
+t0+140ms  first forward done; sampler picks token
+t0+160ms  first token chunk flushed  <-- TTFT
+t0+175ms  token #2
+t0+190ms  token #3
+...
+t0+1200ms last token, stream closes  <-- E2E latency
+```
+
+Example Reporting template 
+
+Prompt len: 512 tokens, Max output: 128, Sampling: greedy
+Concurrency: 8 users, continuous batching on
+TTFT: p50=220 ms, p95=380 ms
+TPOT: p50=22 ms, p95=45 ms
+E2E: p50=2.9 s
+Throughput: 120 tok/s (system), 45 tok/s (per user)
+Notes: prompt-cache hit-rate 72%, speculative decoding ON
+
+
+## **ITL / TPOT (inter-token latency / time-per-output-token)**
+Average time between consecutive output tokens once streaming has started. It measures how smoothly tokens arrive after the first token.
+
+How to compute (client-side)?
+
+Record the timestamp for each token chunk you receive after the first token.
+
+Compute the deltas between adjacent tokens: Δᵢ = tᵢ − tᵢ₋₁.
+
+ITL/TPOT = mean(Δᵢ). Also track p50/p95 to capture jitter.
+
+Relation to other metrics:
+
+TTFT = time until the first token.
+
+ITL/TPOT = cadence after streaming begins.
+
+E2E latency ≈ TTFT + (ITL × #tokens_out) + tail work.
+
+
+## **E2E (END to END Latency)** 
+
+E2E latency is the total wall-clock time from when your client sends a request until the full response is received (stream closed or final chunk delivered).
+
+Streaming vs non-streaming
+
+Streaming E2E: from send() → first byte (TTFB) → first token (TTFT) → tokens arrive → last token → stream closes.
+
+Non-streaming E2E: from send() → single response body received.
+
+```
+E2E ≈ TTFT + (ITL × N_out) + tail_overhead
+```
+
+## **SYSTEM TOKEN PER SECOND**
+
+the aggregate token generation rate of your whole serving stack (one host or a fleet).
+
+```
+system_tps = (total output tokens emitted by all requests) / (measurement window in seconds)
+```
+Why it’s useful
+
+Capacity planning: “How many tokens/sec can the cluster sustain at target latency?”
+
+**Cost/efficiency: tokens/sec per GPU or per dollar.**
+
+SLO alarms: sudden drops signal contention, paging, or bad deployments.
+
+How it differs from user TPS
+
+User TPS (per-stream TPS) ≈ 1 / ITL (time-per-output-token) that a single user experiences.
+
+system_tps sums across all concurrent streams. It rises with concurrency and batching—up to the point latency/SLOs suffer.
+
+Quick relationships
+
+In steady state:
+
+system_tps ≈ RPS × E[output_tokens_per_request]
+
+user_tps ≈ 1 / ITL
+
+Upper bound intuition (decode phase):
+
+system_tps ≤ (Σ GPUs) × (decode_tps_per_GPU) × (utilization) × (batch_efficiency)
+
+
+## RPS ##
+RPS = Requests Per Second — the rate at which your system completes requests.
