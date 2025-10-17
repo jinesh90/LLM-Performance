@@ -1,0 +1,1096 @@
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$ ./benchmark_single_user.sh
+
+=== gpt-oss:20b  (dur=60s, conc=1) ===
+Requests OK/Total: 13/13  |  Errors: 0
+RPS: 0.21   System TPS: 50.50
+ttft_ms: mean=1500.1  p50=1400.6  p95=3433.5  p99=4752.3
+e2e_ms: mean=4697.5  p50=4689.8  p95=6541.9  p99=8684.8
+tps: mean=58.5  p50=58.5  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.2  p99=17.2
+prefill_ms: mean=223.4  p50=248.7  p95=439.5  p99=655.9
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.9
+itl_p95_ms: mean=18.1  p50=18.0  p95=18.9  p99=19.5
+
+=== yi:34b  (dur=60s, conc=1) ===
+Requests OK/Total: 5/5  |  Errors: 0
+RPS: 0.08   System TPS: 20.29
+ttft_ms: mean=1393.9  p50=104.9  p95=5256.1  p99=6282.0
+e2e_ms: mean=12541.6  p50=11290.5  p95=16468.2  p99=17489.6
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.2  p99=44.2
+prefill_ms: mean=45.2  p50=14.7  p95=138.3  p99=162.8
+itl_mean_ms: mean=43.8  p50=43.8  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.9  p50=44.8  p95=45.1  p99=45.2
+
+=== llama3.1:8b  (dur=60s, conc=1) ===
+Requests OK/Total: 18/18  |  Errors: 0
+RPS: 0.30   System TPS: 67.47
+ttft_ms: mean=289.8  p50=84.4  p95=649.1  p99=3161.3
+e2e_ms: mean=3361.5  p50=3532.7  p95=4139.0  p99=6648.1
+tps: mean=73.5  p50=73.7  p95=74.1  p99=74.2
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=15.1  p50=6.7  p95=32.8  p99=143.6
+itl_mean_ms: mean=13.6  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.4  p50=14.3  p95=15.1  p99=15.1
+
+=== mistral:7b  (dur=60s, conc=1) ===
+Requests OK/Total: 23/23  |  Errors: 0
+RPS: 0.37   System TPS: 79.49
+ttft_ms: mean=172.4  p50=38.6  p95=45.4  p99=2471.7
+e2e_ms: mean=2685.1  p50=2757.6  p95=3077.7  p99=4931.9
+tps: mean=84.5  p50=84.6  p95=85.1  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=14.0  p50=6.6  p95=15.0  p99=139.0
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.4  p99=12.5
+
+=== gemma2:27b  (dur=60s, conc=1) ===
+Requests OK/Total: 7/7  |  Errors: 0
+RPS: 0.11   System TPS: 21.38
+ttft_ms: mean=1087.3  p50=127.2  p95=4831.4  p99=6441.1
+e2e_ms: mean=9485.0  p50=10618.8  p95=15523.6  p99=17129.4
+tps: mean=24.1  p50=24.1  p95=24.3  p99=24.3
+tpot_ms: mean=41.6  p50=41.6  p95=42.0  p99=42.1
+prefill_ms: mean=59.9  p50=11.3  p95=236.2  p99=300.8
+itl_mean_ms: mean=41.5  p50=41.6  p95=41.8  p99=41.8
+itl_p95_ms: mean=42.7  p50=42.6  p95=43.0  p99=43.1
+
+=== qwen2.5:14b  (dur=60s, conc=1) ===
+Requests OK/Total: 9/9  |  Errors: 0
+RPS: 0.14   System TPS: 34.33
+ttft_ms: mean=642.2  p50=90.4  p95=3088.0  p99=4682.7
+e2e_ms: mean=7117.9  p50=6869.6  p95=9928.8  p99=11533.4
+tps: mean=37.7  p50=37.7  p95=38.3  p99=38.4
+tpot_ms: mean=26.5  p50=26.5  p95=26.8  p99=26.8
+prefill_ms: mean=52.0  p50=23.7  p95=189.7  p99=269.4
+itl_mean_ms: mean=26.5  p50=26.5  p95=26.8  p99=26.8
+itl_p95_ms: mean=27.5  p50=27.6  p95=27.6  p99=27.6
+
+================================================================
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$ ./benchmark_concurrent_users.sh
+Starting Concurrent Requests to LLMs
+gpt-oss:20b  conc=1
+
+=== gpt-oss:20b  (dur=120s, conc=1) ===
+Requests OK/Total: 27/27  |  Errors: 0
+RPS: 0.22   System TPS: 52.24
+ttft_ms: mean=1396.9  p50=1393.1  p95=1965.9  p99=4432.7
+e2e_ms: mean=4546.3  p50=4688.9  p95=4761.4  p99=8059.4
+tps: mean=58.5  p50=58.5  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.2  p99=17.3
+prefill_ms: mean=229.9  p50=249.3  p95=257.6  p99=595.0
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.9  p99=17.9
+itl_p95_ms: mean=18.4  p50=18.2  p95=19.4  p99=19.5
+gpt-oss:20b  conc=2
+
+=== gpt-oss:20b  (dur=120s, conc=2) ===
+Requests OK/Total: 30/30  |  Errors: 0
+RPS: 0.24   System TPS: 55.83
+ttft_ms: mean=5094.7  p50=5189.5  p95=6271.1  p99=6279.6
+e2e_ms: mean=8330.5  p50=8992.3  p95=9234.5  p99=9263.5
+tps: mean=58.6  p50=58.6  p95=58.9  p99=59.0
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=186.9  p50=209.9  p95=257.6  p99=257.6
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.1  p95=19.4  p99=19.6
+gpt-oss:20b  conc=4
+
+=== gpt-oss:20b  (dur=120s, conc=4) ===
+Requests OK/Total: 31/31  |  Errors: 0
+RPS: 0.23   System TPS: 55.43
+ttft_ms: mean=13332.3  p50=14278.3  p95=15488.3  p99=15516.5
+e2e_ms: mean=16787.7  p50=17140.5  p95=18477.1  p99=18505.3
+tps: mean=58.5  p50=58.5  p95=58.7  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=219.6  p50=248.5  p95=257.7  p99=259.3
+itl_mean_ms: mean=17.4  p50=17.5  p95=17.7  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.1  p95=19.4  p99=19.5
+gpt-oss:20b  conc=8
+
+=== gpt-oss:20b  (dur=120s, conc=8) ===
+Requests OK/Total: 35/35  |  Errors: 0
+RPS: 0.23   System TPS: 55.72
+ttft_ms: mean=27885.0  p50=31051.7  p95=33379.2  p99=33485.5
+e2e_ms: mean=31778.0  p50=35009.3  p95=36528.9  p99=36583.1
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=194.4  p50=248.3  p95=257.6  p99=259.7
+itl_mean_ms: mean=17.4  p50=17.5  p95=17.7  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.1  p95=19.4  p99=19.4
+gpt-oss:20b  conc=16
+
+=== gpt-oss:20b  (dur=120s, conc=16) ===
+Requests OK/Total: 44/44  |  Errors: 0
+RPS: 0.23   System TPS: 55.60
+ttft_ms: mean=52382.4  p50=64438.9  p95=68506.2  p99=69042.4
+e2e_ms: mean=56904.2  p50=68264.4  p95=70705.2  p99=71719.6
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=193.2  p50=209.7  p95=257.5  p99=257.5
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.1  p95=19.3  p99=19.5
+gpt-oss:20b  conc=32
+
+=== gpt-oss:20b  (dur=120s, conc=32) ===
+Requests OK/Total: 60/60  |  Errors: 0
+RPS: 0.24   System TPS: 55.49
+ttft_ms: mean=96876.2  p50=119285.6  p95=135961.2  p99=136832.5
+e2e_ms: mean=100424.4  p50=127243.3  p95=138876.1  p99=139603.0
+tps: mean=58.6  p50=58.6  p95=58.9  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=191.6  p50=248.4  p95=257.5  p99=257.6
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.2  p95=19.3  p99=19.6
+gpt-oss:20b  conc=64
+
+=== gpt-oss:20b  (dur=120s, conc=64) ===
+Requests OK/Total: 90/90  |  Errors: 0
+RPS: 0.23   System TPS: 55.56
+ttft_ms: mean=186162.8  p50=219903.2  p95=276637.8  p99=277045.4
+e2e_ms: mean=182102.7  p50=198271.0  p95=279966.5  p99=280379.8
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=186.2  p50=209.7  p95=257.5  p99=257.6
+itl_mean_ms: mean=17.4  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.2  p50=18.0  p95=19.4  p99=19.6
+yi:34b  conc=1
+
+=== yi:34b  (dur=120s, conc=1) ===
+Requests OK/Total: 11/11  |  Errors: 0
+RPS: 0.08   System TPS: 21.48
+ttft_ms: mean=691.1  p50=101.5  p95=3337.4  p99=5901.0
+e2e_ms: mean=11832.2  p50=11300.4  p95=14430.8  p99=16872.8
+tps: mean=22.7  p50=22.7  p95=22.7  p99=22.8
+tpot_ms: mean=44.1  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=28.1  p50=12.9  p95=98.4  p99=163.8
+itl_mean_ms: mean=43.8  p50=43.9  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.1  p50=45.1  p95=45.4  p99=45.4
+yi:34b  conc=2
+
+=== yi:34b  (dur=120s, conc=2) ===
+Requests OK/Total: 12/12  |  Errors: 0
+RPS: 0.09   System TPS: 22.64
+ttft_ms: mean=10408.8  p50=11371.3  p95=11437.0  p99=11439.5
+e2e_ms: mean=21567.7  p50=22579.0  p95=22642.2  p99=22642.8
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.1  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=12.6  p50=12.4  p95=13.8  p99=13.9
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.0  p50=45.0  p95=45.3  p99=45.3
+yi:34b  conc=4
+
+=== yi:34b  (dur=120s, conc=4) ===
+Requests OK/Total: 14/14  |  Errors: 0
+RPS: 0.09   System TPS: 22.65
+ttft_ms: mean=29025.9  p50=33806.6  p95=33971.3  p99=33994.1
+e2e_ms: mean=40194.2  p50=44878.0  p95=45192.1  p99=45193.9
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.6  p50=12.4  p95=15.0  p99=15.9
+itl_mean_ms: mean=43.8  p50=43.8  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.0  p50=45.0  p95=45.4  p99=45.7
+yi:34b  conc=8
+
+=== yi:34b  (dur=120s, conc=8) ===
+Requests OK/Total: 18/18  |  Errors: 0
+RPS: 0.09   System TPS: 22.65
+ttft_ms: mean=60468.9  p50=76454.7  p95=78764.1  p99=78839.4
+e2e_ms: mean=71514.6  p50=87636.6  p95=90004.1  p99=90051.5
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.1  p99=44.3
+prefill_ms: mean=11.3  p50=11.8  p95=15.0  p99=15.5
+itl_mean_ms: mean=43.8  p50=43.8  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.0  p50=45.0  p95=45.4  p99=45.4
+yi:34b  conc=16
+
+=== yi:34b  (dur=120s, conc=16) ===
+Requests OK/Total: 26/26  |  Errors: 0
+RPS: 0.09   System TPS: 22.64
+ttft_ms: mean=114735.7  p50=137100.3  p95=168711.1  p99=168740.1
+e2e_ms: mean=125742.1  p50=148321.1  p95=179852.2  p99=179930.3
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=10.7  p50=11.9  p95=13.0  p99=14.7
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.9  p50=44.9  p95=45.3  p99=45.4
+yi:34b  conc=32
+
+=== yi:34b  (dur=120s, conc=32) ===
+Requests OK/Total: 42/42  |  Errors: 0
+RPS: 0.09   System TPS: 22.61
+ttft_ms: mean=215907.4  p50=232140.5  p95=345792.4  p99=346318.6
+e2e_ms: mean=227014.4  p50=243328.1  p95=356974.9  p99=357533.9
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=10.2  p50=12.1  p95=13.4  p99=13.8
+itl_mean_ms: mean=43.8  p50=43.8  p95=43.9  p99=44.0
+itl_p95_ms: mean=45.0  p50=45.0  p95=45.3  p99=45.6
+yi:34b  conc=64
+
+
+
+=== yi:34b  (dur=120s, conc=64) ===
+Requests OK/Total: 64/74  |  Errors: 10
+RPS: 0.09   System TPS: 22.58
+ttft_ms: mean=344806.4  p50=353093.2  p95=594674.3  p99=595393.8
+e2e_ms: mean=355941.2  p50=364150.9  p95=605897.2  p99=606596.0
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.8  p50=12.3  p95=13.6  p99=16.9
+itl_mean_ms: mean=43.8  p50=43.8  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.9  p50=44.9  p95=45.4  p99=45.5
+llama3.1:8b  conc=1
+
+=== llama3.1:8b  (dur=120s, conc=1) ===
+Requests OK/Total: 36/36  |  Errors: 0
+RPS: 0.29   System TPS: 69.69
+ttft_ms: mean=194.2  p50=90.7  p95=98.6  p99=2538.2
+e2e_ms: mean=3398.6  p50=3548.3  p95=3587.7  p99=5112.2
+tps: mean=73.5  p50=73.6  p95=74.2  p99=74.4
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.8
+prefill_ms: mean=10.9  p50=6.5  p95=8.2  p99=115.9
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.7
+itl_p95_ms: mean=14.4  p50=14.6  p95=15.0  p99=15.0
+llama3.1:8b  conc=2
+
+=== llama3.1:8b  (dur=120s, conc=2) ===
+Requests OK/Total: 41/41  |  Errors: 0
+RPS: 0.33   System TPS: 73.33
+ttft_ms: mean=2991.6  p50=3495.6  p95=3550.2  p99=3553.5
+e2e_ms: mean=6011.0  p50=6401.7  p95=6995.2  p99=7018.8
+tps: mean=73.7  p50=73.7  p95=74.3  p99=74.5
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.9  p50=6.3  p95=7.9  p99=8.5
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.3  p50=14.1  p95=15.0  p99=15.1
+llama3.1:8b  conc=4
+
+=== llama3.1:8b  (dur=120s, conc=4) ===
+Requests OK/Total: 41/41  |  Errors: 0
+RPS: 0.31   System TPS: 73.22
+ttft_ms: mean=9256.5  p50=10022.7  p95=10545.5  p99=10677.7
+e2e_ms: mean=12469.8  p50=12572.8  p95=13995.5  p99=14014.1
+tps: mean=73.6  p50=73.6  p95=74.3  p99=74.5
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.8
+prefill_ms: mean=5.8  p50=6.3  p95=7.5  p99=8.8
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.7
+itl_p95_ms: mean=14.4  p50=14.4  p95=14.9  p99=15.1
+llama3.1:8b  conc=8
+
+=== llama3.1:8b  (dur=120s, conc=8) ===
+Requests OK/Total: 45/45  |  Errors: 0
+RPS: 0.31   System TPS: 73.09
+ttft_ms: mean=20172.2  p50=21735.4  p95=24053.5  p99=24571.3
+e2e_ms: mean=23317.6  p50=24753.9  p95=27110.4  p99=27722.8
+tps: mean=73.5  p50=73.7  p95=74.2  p99=74.4
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=6.2  p50=6.6  p95=7.5  p99=7.8
+itl_mean_ms: mean=13.6  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.2  p95=14.8  p99=14.8
+llama3.1:8b  conc=16
+
+=== llama3.1:8b  (dur=120s, conc=16) ===
+Requests OK/Total: 53/53  |  Errors: 0
+RPS: 0.31   System TPS: 73.03
+ttft_ms: mean=40708.1  p50=46417.7  p95=49309.6  p99=49503.5
+e2e_ms: mean=43855.8  p50=48747.5  p95=52376.5  p99=52952.1
+tps: mean=73.6  p50=73.7  p95=74.2  p99=74.4
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.6  p50=6.3  p95=7.4  p99=7.8
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.1  p95=15.0  p99=15.1
+llama3.1:8b  conc=32
+
+=== llama3.1:8b  (dur=120s, conc=32) ===
+Requests OK/Total: 70/70  |  Errors: 0
+RPS: 0.32   System TPS: 72.83
+ttft_ms: mean=74244.5  p50=94262.8  p95=97691.4  p99=97781.5
+e2e_ms: mean=77335.3  p50=97743.5  p95=101133.5  p99=101181.4
+tps: mean=73.6  p50=73.7  p95=74.2  p99=74.3
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=6.1  p50=6.5  p95=7.5  p99=8.0
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.3  p50=14.2  p95=15.0  p99=15.1
+llama3.1:8b  conc=64
+
+=== llama3.1:8b  (dur=120s, conc=64) ===
+Requests OK/Total: 101/101  |  Errors: 0
+RPS: 0.31   System TPS: 72.66
+ttft_ms: mean=136053.6  p50=156074.5  p95=201380.9  p99=203037.1
+e2e_ms: mean=139180.5  p50=159545.6  p95=204811.3  p99=205137.3
+tps: mean=73.6  p50=73.6  p95=74.1  p99=74.4
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.8  p50=6.4  p95=7.5  p99=8.2
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.3  p50=14.3  p95=15.0  p99=15.0
+mistral:7b  conc=1
+
+=== mistral:7b  (dur=120s, conc=1) ===
+Requests OK/Total: 46/46  |  Errors: 0
+RPS: 0.38   System TPS: 81.60
+ttft_ms: mean=105.8  p50=38.9  p95=45.6  p99=1759.1
+e2e_ms: mean=2613.8  p50=2760.1  p95=3074.3  p99=4787.8
+tps: mean=84.6  p50=84.6  p95=85.0  p99=85.2
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=10.5  p50=7.1  p95=9.1  p99=102.9
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+mistral:7b  conc=2
+
+=== mistral:7b  (dur=120s, conc=2) ===
+Requests OK/Total: 48/48  |  Errors: 0
+RPS: 0.39   System TPS: 84.16
+ttft_ms: mean=2533.2  p50=2776.7  p95=3089.2  p99=3089.9
+e2e_ms: mean=5078.3  p50=4997.6  p95=6103.6  p99=6111.2
+tps: mean=84.6  p50=84.6  p95=85.4  p99=85.5
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.3  p50=6.9  p95=8.8  p99=9.5
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+mistral:7b  conc=4
+
+=== mistral:7b  (dur=120s, conc=4) ===
+Requests OK/Total: 49/49  |  Errors: 0
+RPS: 0.38   System TPS: 84.01
+ttft_ms: mean=7667.0  p50=7872.2  p95=9159.2  p99=9176.1
+e2e_ms: mean=10274.4  p50=10708.5  p95=11912.7  p99=12174.4
+tps: mean=84.5  p50=84.6  p95=84.9  p99=85.3
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.4  p50=6.7  p95=7.8  p99=9.2
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+itl_p95_ms: mean=12.2  p50=12.1  p95=12.3  p99=13.1
+mistral:7b  conc=8
+
+=== mistral:7b  (dur=120s, conc=8) ===
+Requests OK/Total: 52/52  |  Errors: 0
+RPS: 0.38   System TPS: 83.96
+ttft_ms: mean=17361.7  p50=18705.8  p95=20506.1  p99=20895.7
+e2e_ms: mean=19991.0  p50=21244.5  p95=22588.4  p99=23775.4
+tps: mean=84.5  p50=84.6  p95=85.0  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.3  p50=6.9  p95=8.5  p99=10.0
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+mistral:7b  conc=16
+
+=== mistral:7b  (dur=120s, conc=16) ===
+Requests OK/Total: 61/61  |  Errors: 0
+RPS: 0.38   System TPS: 83.74
+ttft_ms: mean=34460.2  p50=38381.2  p95=41076.7  p99=41696.2
+e2e_ms: mean=37057.2  p50=40920.1  p95=43794.2  p99=44102.0
+tps: mean=84.5  p50=84.6  p95=84.9  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.5  p50=7.0  p95=8.0  p99=8.8
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.3
+mistral:7b  conc=32
+
+=== mistral:7b  (dur=120s, conc=32) ===
+Requests OK/Total: 78/78  |  Errors: 0
+RPS: 0.39   System TPS: 83.58
+ttft_ms: mean=63511.1  p50=78200.4  p95=82043.1  p99=82354.2
+e2e_ms: mean=66062.4  p50=80831.8  p95=84545.4  p99=84972.3
+tps: mean=84.6  p50=84.6  p95=85.0  p99=85.3
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.1  p50=6.7  p95=7.6  p99=8.1
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.4  p99=12.4
+mistral:7b  conc=64
+
+=== mistral:7b  (dur=120s, conc=64) ===
+Requests OK/Total: 107/107  |  Errors: 0
+RPS: 0.37   System TPS: 83.33
+ttft_ms: mean=118059.9  p50=140143.9  p95=167877.9  p99=169033.8
+e2e_ms: mean=120685.6  p50=143165.6  p95=170866.2  p99=172015.5
+tps: mean=84.6  p50=84.6  p95=85.2  p99=85.5
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.0  p50=6.7  p95=7.5  p99=7.9
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+gemma2:27b   conc=1
+
+=== gemma2:27b  (dur=120s, conc=1) ===
+Requests OK/Total: 19/19  |  Errors: 0
+RPS: 0.15   System TPS: 24.07
+ttft_ms: mean=457.8  p50=134.4  p95=776.1  p99=5261.9
+e2e_ms: mean=6455.4  p50=5424.3  p95=10330.7  p99=11831.8
+tps: mean=25.7  p50=25.7  p95=25.9  p99=25.9
+tpot_ms: mean=38.9  p50=38.9  p95=39.1  p99=39.2
+prefill_ms: mean=19.6  p50=11.2  p95=36.3  p99=148.1
+itl_mean_ms: mean=38.8  p50=38.8  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.0  p50=41.2  p95=41.5  p99=41.5
+gemma2:27b   conc=2
+
+=== gemma2:27b  (dur=120s, conc=2) ===
+Requests OK/Total: 19/19  |  Errors: 0
+RPS: 0.14   System TPS: 25.62
+ttft_ms: mean=6565.0  p50=5963.4  p95=10099.9  p99=10122.0
+e2e_ms: mean=13498.9  p50=15392.3  p95=15833.7  p99=15890.4
+tps: mean=25.7  p50=25.7  p95=25.9  p99=26.0
+tpot_ms: mean=38.9  p50=38.9  p95=39.1  p99=39.2
+prefill_ms: mean=10.8  p50=11.3  p95=12.0  p99=12.2
+itl_mean_ms: mean=38.7  p50=38.8  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.0  p50=41.0  p95=41.5  p99=41.5
+gemma2:27b   conc=4
+
+=== gemma2:27b  (dur=120s, conc=4) ===
+Requests OK/Total: 19/19  |  Errors: 0
+RPS: 0.13   System TPS: 25.58
+ttft_ms: mean=20471.2  p50=21061.4  p95=25978.8  p99=26029.1
+e2e_ms: mean=27958.0  p50=29554.3  p95=35319.9  p99=35724.1
+tps: mean=25.7  p50=25.7  p95=25.9  p99=26.0
+tpot_ms: mean=38.9  p50=39.0  p95=39.2  p99=39.3
+prefill_ms: mean=10.9  p50=11.3  p95=12.5  p99=13.2
+itl_mean_ms: mean=38.7  p50=38.8  p95=38.9  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.1  p95=41.5  p99=41.9
+gemma2:27b   conc=8
+
+=== gemma2:27b  (dur=120s, conc=8) ===
+Requests OK/Total: 24/24  |  Errors: 0
+RPS: 0.13   System TPS: 25.55
+ttft_ms: mean=42898.1  p50=48034.3  p95=61121.9  p99=61827.6
+e2e_ms: mean=50239.6  p50=54051.2  p95=66997.3  p99=70716.3
+tps: mean=25.7  p50=25.7  p95=26.0  p99=26.0
+tpot_ms: mean=38.9  p50=39.0  p95=39.2  p99=39.2
+prefill_ms: mean=10.4  p50=11.3  p95=14.2  p99=14.5
+itl_mean_ms: mean=38.8  p50=38.8  p95=38.9  p99=38.9
+itl_p95_ms: mean=41.2  p50=41.2  p95=41.6  p99=41.7
+gemma2:27b   conc=16
+
+=== gemma2:27b  (dur=120s, conc=16) ===
+Requests OK/Total: 32/32  |  Errors: 0
+RPS: 0.13   System TPS: 25.53
+ttft_ms: mean=84479.1  p50=106840.1  p95=122559.3  p99=124820.8
+e2e_ms: mean=92044.3  p50=113184.0  p95=130623.3  p99=130697.3
+tps: mean=25.7  p50=25.7  p95=25.8  p99=26.0
+tpot_ms: mean=38.9  p50=39.0  p95=39.2  p99=39.2
+prefill_ms: mean=11.0  p50=11.7  p95=13.3  p99=14.3
+itl_mean_ms: mean=38.8  p50=38.8  p95=38.9  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.1  p95=41.5  p99=41.5
+gemma2:27b   conc=32
+
+=== gemma2:27b  (dur=120s, conc=32) ===
+Requests OK/Total: 49/49  |  Errors: 0
+RPS: 0.15   System TPS: 25.54
+ttft_ms: mean=138885.6  p50=161363.4  p95=208117.9  p99=212507.9
+e2e_ms: mean=145294.7  p50=165536.7  p95=213952.3  p99=217472.7
+tps: mean=25.7  p50=25.7  p95=26.0  p99=26.1
+tpot_ms: mean=38.9  p50=38.9  p95=39.1  p99=39.2
+prefill_ms: mean=10.5  p50=11.8  p95=13.3  p99=13.6
+itl_mean_ms: mean=38.7  p50=38.8  p95=38.9  p99=39.0
+itl_p95_ms: mean=41.0  p50=41.0  p95=41.5  p99=41.6
+gemma2:27b   conc=64
+
+=== gemma2:27b  (dur=120s, conc=64) ===
+Requests OK/Total: 84/84  |  Errors: 0
+RPS: 0.14   System TPS: 25.51
+ttft_ms: mean=263289.6  p50=276709.4  p95=465391.5  p99=472642.3
+e2e_ms: mean=270241.7  p50=282260.2  p95=470938.3  p99=481719.6
+tps: mean=25.7  p50=25.7  p95=26.0  p99=26.1
+tpot_ms: mean=38.9  p50=38.9  p95=39.1  p99=39.1
+prefill_ms: mean=10.5  p50=11.5  p95=12.6  p99=13.9
+itl_mean_ms: mean=38.7  p50=38.8  p95=38.9  p99=38.9
+itl_p95_ms: mean=41.0  p50=41.1  p95=41.5  p99=41.5
+qwen2.5:14b   conc=1
+
+=== qwen2.5:14b  (dur=120s, conc=1) ===
+Requests OK/Total: 20/20  |  Errors: 0
+RPS: 0.16   System TPS: 39.68
+ttft_ms: mean=319.9  p50=101.7  p95=332.7  p99=3665.5
+e2e_ms: mean=6073.2  p50=6183.9  p95=6481.0  p99=9787.2
+tps: mean=41.7  p50=41.7  p95=42.0  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.1  p99=24.2
+prefill_ms: mean=21.9  p50=14.2  p95=25.6  p99=146.4
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.0  p99=24.1
+itl_p95_ms: mean=25.5  p50=25.5  p95=25.7  p99=25.8
+qwen2.5:14b   conc=2
+
+=== qwen2.5:14b  (dur=120s, conc=2) ===
+Requests OK/Total: 21/21  |  Errors: 0
+RPS: 0.17   System TPS: 41.52
+ttft_ms: mean=5802.6  p50=6190.1  p95=6269.3  p99=6333.8
+e2e_ms: mean=11794.5  p50=12278.9  p95=12400.3  p99=12453.6
+tps: mean=41.7  p50=41.7  p95=41.9  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.1  p99=24.2
+prefill_ms: mean=13.2  p50=13.9  p95=16.4  p99=18.9
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.0  p99=24.0
+itl_p95_ms: mean=25.4  p50=25.5  p95=25.7  p99=25.7
+qwen2.5:14b   conc=4
+
+=== qwen2.5:14b  (dur=120s, conc=4) ===
+Requests OK/Total: 24/24  |  Errors: 0
+RPS: 0.17   System TPS: 41.43
+ttft_ms: mean=16314.7  p50=18021.4  p95=18591.4  p99=18613.8
+e2e_ms: mean=22197.2  p50=23616.2  p95=24707.4  p99=24718.4
+tps: mean=41.6  p50=41.7  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.0  p50=14.1  p95=15.4  p99=18.5
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.5  p50=25.6  p95=25.9  p99=25.9
+qwen2.5:14b   conc=8
+
+=== qwen2.5:14b  (dur=120s, conc=8) ===
+Requests OK/Total: 29/29  |  Errors: 0
+RPS: 0.17   System TPS: 41.36
+ttft_ms: mean=34854.3  p50=40005.6  p95=42185.0  p99=43021.4
+e2e_ms: mean=40584.4  p50=45873.8  p95=48203.6  p99=48219.2
+tps: mean=41.6  p50=41.6  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=12.6  p50=13.8  p95=15.6  p99=16.3
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.6  p95=26.0  p99=26.0
+qwen2.5:14b   conc=16
+
+=== qwen2.5:14b  (dur=120s, conc=16) ===
+Requests OK/Total: 36/36  |  Errors: 0
+RPS: 0.17   System TPS: 41.34
+ttft_ms: mean=69092.1  p50=88433.8  p95=91279.9  p99=91287.0
+e2e_ms: mean=74944.3  p50=94015.0  p95=96623.1  p99=97394.6
+tps: mean=41.6  p50=41.6  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.0  p50=14.0  p95=15.1  p99=15.3
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.5  p50=25.5  p95=25.9  p99=25.9
+qwen2.5:14b   conc=32
+
+=== qwen2.5:14b  (dur=120s, conc=32) ===
+Requests OK/Total: 51/51  |  Errors: 0
+RPS: 0.17   System TPS: 41.24
+ttft_ms: mean=128078.9  p50=149903.6  p95=187837.4  p99=188393.0
+e2e_ms: mean=134015.4  p50=156027.2  p95=193905.2  p99=193968.7
+tps: mean=41.6  p50=41.6  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.5  p50=14.1  p95=14.8  p99=19.7
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.7  p95=26.0  p99=26.0
+qwen2.5:14b   conc=64
+
+
+
+
+=== qwen2.5:14b  (dur=120s, conc=64) ===
+Requests OK/Total: 84/84  |  Errors: 0
+RPS: 0.17   System TPS: 41.25
+ttft_ms: mean=231501.3  p50=246596.5  p95=374132.0  p99=376331.0
+e2e_ms: mean=237395.6  p50=252712.1  p95=380223.3  p99=382490.2
+tps: mean=41.6  p50=41.7  p95=41.9  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.0  p50=14.0  p95=15.1  p99=15.9
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.6  p95=26.0  p99=26.0
+Completed Concurrent Requests to LLMs !
+
+
+
+
+=======DATE 10/16/2025=================
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$ ./benchmark_concurrent_users.sh
+Starting Concurrent Requests to LLMs
+gpt-oss:20b  conc=1
+
+=== gpt-oss:20b  (dur=120s, conc=1) ===
+Requests OK/Total: 27/27  |  Errors: 0
+RPS: 0.22   System TPS: 52.53
+ttft_ms: mean=1353.0  p50=1389.3  p95=1959.5  p99=4428.3
+e2e_ms: mean=4531.4  p50=4684.9  p95=4748.6  p99=8037.5
+tps: mean=58.6  p50=58.5  p95=58.9  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=215.7  p50=249.1  p95=260.6  p99=593.9
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.2  p99=18.9
+gpt-oss:20b  conc=2
+
+=== gpt-oss:20b  (dur=120s, conc=2) ===
+Requests OK/Total: 30/30  |  Errors: 0
+RPS: 0.24   System TPS: 55.87
+ttft_ms: mean=4993.5  p50=5080.4  p95=6313.1  p99=6344.5
+e2e_ms: mean=8239.5  p50=7902.2  p95=9212.5  p99=9216.0
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=185.1  p50=209.4  p95=251.9  p99=257.4
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.2  p99=19.1
+gpt-oss:20b  conc=4
+
+=== gpt-oss:20b  (dur=120s, conc=4) ===
+Requests OK/Total: 30/30  |  Errors: 0
+RPS: 0.23   System TPS: 55.90
+ttft_ms: mean=12846.3  p50=13967.6  p95=15496.0  p99=15509.5
+e2e_ms: mean=16904.9  p50=18011.2  p95=18404.6  p99=18455.3
+tps: mean=58.5  p50=58.5  p95=58.7  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=184.6  p50=209.5  p95=259.7  p99=259.7
+itl_mean_ms: mean=17.4  p50=17.5  p95=17.7  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.8  p99=19.4
+gpt-oss:20b  conc=8
+
+=== gpt-oss:20b  (dur=120s, conc=8) ===
+Requests OK/Total: 36/36  |  Errors: 0
+RPS: 0.24   System TPS: 55.68
+ttft_ms: mean=28460.5  p50=30738.4  p95=32422.6  p99=33180.5
+e2e_ms: mean=30566.1  p50=33753.8  p95=35333.2  p99=36036.8
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=191.5  p50=249.2  p95=259.7  p99=259.8
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.4  p99=19.0
+gpt-oss:20b  conc=16
+
+=== gpt-oss:20b  (dur=120s, conc=16) ===
+Requests OK/Total: 44/44  |  Errors: 0
+RPS: 0.24   System TPS: 55.83
+ttft_ms: mean=50901.9  p50=62076.9  p95=65862.0  p99=67014.5
+e2e_ms: mean=55174.4  p50=65557.1  p95=68498.9  p99=69320.1
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=172.8  p50=209.5  p95=258.5  p99=259.6
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.4  p99=18.8
+gpt-oss:20b  conc=32
+
+=== gpt-oss:20b  (dur=120s, conc=32) ===
+Requests OK/Total: 59/59  |  Errors: 0
+RPS: 0.23   System TPS: 55.67
+ttft_ms: mean=98013.1  p50=128147.4  p95=134113.9  p99=136052.4
+e2e_ms: mean=100397.6  p50=130876.4  p95=136488.2  p99=138688.2
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=178.8  p50=209.6  p95=259.4  p99=259.7
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=18.0  p95=18.3  p99=19.0
+gpt-oss:20b  conc=64
+
+=== gpt-oss:20b  (dur=120s, conc=64) ===
+Requests OK/Total: 92/92  |  Errors: 0
+RPS: 0.23   System TPS: 55.40
+ttft_ms: mean=178024.2  p50=202479.9  p95=272625.2  p99=273724.5
+e2e_ms: mean=179784.1  p50=201535.9  p95=276032.1  p99=276783.3
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=192.9  p50=210.2  p95=259.5  p99=259.9
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.0  p50=17.9  p95=18.2  p99=18.4
+yi:34b  conc=1
+
+=== yi:34b  (dur=120s, conc=1) ===
+Requests OK/Total: 11/11  |  Errors: 0
+RPS: 0.09   System TPS: 21.54
+ttft_ms: mean=677.9  p50=99.5  p95=3347.0  p99=5920.6
+e2e_ms: mean=11639.6  p50=11277.7  p95=14430.4  p99=16882.8
+tps: mean=22.8  p50=22.8  p95=22.9  p99=22.9
+tpot_ms: mean=43.9  p50=43.9  p95=44.2  p99=44.2
+prefill_ms: mean=26.0  p50=12.1  p95=98.5  p99=163.2
+itl_mean_ms: mean=43.7  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.8  p50=45.0  p95=45.1  p99=45.1
+yi:34b  conc=2
+
+=== yi:34b  (dur=120s, conc=2) ===
+Requests OK/Total: 12/12  |  Errors: 0
+RPS: 0.09   System TPS: 22.66
+ttft_ms: mean=10408.7  p50=11341.7  p95=11442.5  p99=11449.3
+e2e_ms: mean=21565.2  p50=22525.5  p95=22639.0  p99=22640.8
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.3  p50=11.9  p95=15.0  p99=16.3
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.0  p50=45.1  p95=45.3  p99=45.3
+yi:34b  conc=4
+
+=== yi:34b  (dur=120s, conc=4) ===
+Requests OK/Total: 14/14  |  Errors: 0
+RPS: 0.09   System TPS: 22.67
+ttft_ms: mean=28999.9  p50=33647.2  p95=33961.0  p99=33963.2
+e2e_ms: mean=40138.2  p50=44810.0  p95=45137.7  p99=45141.9
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.3  p50=12.0  p95=13.7  p99=13.9
+itl_mean_ms: mean=43.8  p50=43.7  p95=44.0  p99=44.0
+itl_p95_ms: mean=45.0  p50=44.9  p95=45.5  p99=45.9
+yi:34b  conc=8
+
+=== yi:34b  (dur=120s, conc=8) ===
+Requests OK/Total: 18/18  |  Errors: 0
+RPS: 0.09   System TPS: 22.64
+ttft_ms: mean=61288.5  p50=77861.9  p95=79194.7  p99=79233.4
+e2e_ms: mean=72355.1  p50=88066.3  p95=90416.2  p99=90418.6
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.9
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.3  p50=12.4  p95=14.5  p99=14.9
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=44.0
+itl_p95_ms: mean=44.9  p50=44.9  p95=45.3  p99=45.4
+yi:34b  conc=16
+
+=== yi:34b  (dur=120s, conc=16) ===
+Requests OK/Total: 26/26  |  Errors: 0
+RPS: 0.09   System TPS: 22.63
+ttft_ms: mean=117343.4  p50=141446.1  p95=169577.4  p99=169648.8
+e2e_ms: mean=128522.6  p50=152657.1  p95=180788.8  p99=180834.9
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.8
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.1  p50=12.2  p95=14.4  p99=14.5
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.9  p50=44.9  p95=45.3  p99=45.4
+yi:34b  conc=32
+
+=== yi:34b  (dur=120s, conc=32) ===
+Requests OK/Total: 42/42  |  Errors: 0
+RPS: 0.09   System TPS: 22.61
+ttft_ms: mean=215976.2  p50=231516.0  p95=347200.8  p99=348426.8
+e2e_ms: mean=227048.0  p50=242698.9  p95=358410.1  p99=358454.5
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.9
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.1  p50=12.1  p95=14.1  p99=14.4
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.0  p50=45.1  p95=45.5  p99=45.5
+yi:34b  conc=64
+
+=== yi:34b  (dur=120s, conc=64) ===
+Requests OK/Total: 64/74  |  Errors: 10
+RPS: 0.09   System TPS: 22.59
+ttft_ms: mean=345180.4  p50=353020.0  p95=594698.7  p99=595438.3
+e2e_ms: mean=356314.6  p50=364220.4  p95=605890.8  p99=606527.6
+tps: mean=22.7  p50=22.7  p95=22.8  p99=22.9
+tpot_ms: mean=44.0  p50=44.0  p95=44.3  p99=44.3
+prefill_ms: mean=11.7  p50=12.5  p95=14.4  p99=15.7
+itl_mean_ms: mean=43.8  p50=43.7  p95=43.9  p99=43.9
+itl_p95_ms: mean=44.9  p50=44.9  p95=45.4  p99=45.6
+llama3.1:8b  conc=1
+
+=== llama3.1:8b  (dur=120s, conc=1) ===
+Requests OK/Total: 35/35  |  Errors: 0
+RPS: 0.29   System TPS: 69.79
+ttft_ms: mean=194.6  p50=88.0  p95=95.7  p99=2567.3
+e2e_ms: mean=3469.6  p50=3545.7  p95=3581.1  p99=6029.7
+tps: mean=73.6  p50=73.6  p95=74.2  p99=74.3
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=11.0  p50=6.6  p95=8.9  p99=113.4
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.0  p95=14.9  p99=14.9
+llama3.1:8b  conc=2
+
+=== llama3.1:8b  (dur=120s, conc=2) ===
+Requests OK/Total: 38/38  |  Errors: 0
+RPS: 0.31   System TPS: 73.34
+ttft_ms: mean=3199.9  p50=3500.3  p95=3550.4  p99=3595.1
+e2e_ms: mean=6396.7  p50=6769.3  p95=7003.0  p99=7025.6
+tps: mean=73.6  p50=73.7  p95=74.2  p99=74.4
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.8  p50=6.3  p95=7.3  p99=7.5
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.3  p50=14.4  p95=14.9  p99=14.9
+llama3.1:8b  conc=4
+
+=== llama3.1:8b  (dur=120s, conc=4) ===
+Requests OK/Total: 44/44  |  Errors: 0
+RPS: 0.33   System TPS: 73.32
+ttft_ms: mean=8600.6  p50=8908.5  p95=10545.6  p99=10566.1
+e2e_ms: mean=11581.6  p50=12123.0  p95=13999.7  p99=14036.0
+tps: mean=73.7  p50=73.7  p95=74.4  p99=74.5
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.8  p50=6.3  p95=7.6  p99=7.8
+itl_mean_ms: mean=13.5  p50=13.6  p95=13.6  p99=13.7
+itl_p95_ms: mean=14.3  p50=14.2  p95=15.0  p99=15.2
+llama3.1:8b  conc=8
+
+=== llama3.1:8b  (dur=120s, conc=8) ===
+Requests OK/Total: 44/44  |  Errors: 0
+RPS: 0.31   System TPS: 73.20
+ttft_ms: mean=20822.7  p50=22656.4  p95=24049.2  p99=24194.5
+e2e_ms: mean=24041.3  p50=25915.8  p95=27519.7  p99=27528.2
+tps: mean=73.6  p50=73.7  p95=74.3  p99=74.3
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=6.1  p50=6.5  p95=7.7  p99=8.4
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.0  p95=14.9  p99=15.0
+llama3.1:8b  conc=16
+
+=== llama3.1:8b  (dur=120s, conc=16) ===
+Requests OK/Total: 51/51  |  Errors: 0
+RPS: 0.30   System TPS: 73.12
+ttft_ms: mean=41790.2  p50=48660.3  p95=50514.0  p99=51172.2
+e2e_ms: mean=45030.3  p50=52071.5  p95=53613.2  p99=53837.4
+tps: mean=73.7  p50=73.7  p95=74.5  p99=74.6
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.6  p50=6.3  p95=7.4  p99=7.7
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.1  p50=14.0  p95=14.8  p99=15.0
+llama3.1:8b  conc=32
+
+=== llama3.1:8b  (dur=120s, conc=32) ===
+Requests OK/Total: 68/68  |  Errors: 0
+RPS: 0.31   System TPS: 72.97
+ttft_ms: mean=76796.2  p50=97477.1  p95=102233.1  p99=102471.2
+e2e_ms: mean=79954.8  p50=100679.1  p95=105665.8  p99=105791.2
+tps: mean=73.7  p50=73.8  p95=74.4  p99=74.6
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=6.0  p50=6.4  p95=7.4  p99=7.5
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.0  p95=14.9  p99=15.0
+llama3.1:8b  conc=64
+
+=== llama3.1:8b  (dur=120s, conc=64) ===
+Requests OK/Total: 100/100  |  Errors: 0
+RPS: 0.31   System TPS: 72.78
+ttft_ms: mean=134853.2  p50=156868.4  p95=194633.5  p99=195264.3
+e2e_ms: mean=137969.4  p50=158941.5  p95=198053.2  p99=198737.7
+tps: mean=73.7  p50=73.8  p95=74.4  p99=74.6
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=5.8  p50=6.4  p95=7.4  p99=8.3
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.2  p50=14.0  p95=14.9  p99=14.9
+mistral:7b  conc=1
+
+=== mistral:7b  (dur=120s, conc=1) ===
+Requests OK/Total: 44/44  |  Errors: 0
+RPS: 0.36   System TPS: 81.53
+ttft_ms: mean=108.8  p50=39.4  p95=44.0  p99=1834.4
+e2e_ms: mean=2774.9  p50=3051.5  p95=3076.3  p99=4445.4
+tps: mean=84.4  p50=84.4  p95=85.1  p99=85.3
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=10.5  p50=7.1  p95=8.8  p99=102.9
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.3
+mistral:7b  conc=2
+
+=== mistral:7b  (dur=120s, conc=2) ===
+Requests OK/Total: 50/50  |  Errors: 0
+RPS: 0.40   System TPS: 84.19
+ttft_ms: mean=2460.4  p50=2558.7  p95=3088.8  p99=3093.0
+e2e_ms: mean=4924.5  p50=4920.0  p95=6089.9  p99=6103.6
+tps: mean=84.6  p50=84.7  p95=85.3  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.1  p50=6.6  p95=8.5  p99=9.2
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.3
+mistral:7b  conc=4
+
+=== mistral:7b  (dur=120s, conc=4) ===
+Requests OK/Total: 51/51  |  Errors: 0
+RPS: 0.39   System TPS: 84.07
+ttft_ms: mean=7372.1  p50=7702.3  p95=8783.1  p99=9034.0
+e2e_ms: mean=9889.3  p50=10265.7  p95=11197.6  p99=11910.7
+tps: mean=84.5  p50=84.6  p95=85.1  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.3  p50=6.9  p95=7.8  p99=8.0
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.2  p99=13.0
+mistral:7b  conc=8
+
+=== mistral:7b  (dur=120s, conc=8) ===
+Requests OK/Total: 53/53  |  Errors: 0
+RPS: 0.38   System TPS: 83.94
+ttft_ms: mean=16981.7  p50=18224.2  p95=19332.3  p99=19577.7
+e2e_ms: mean=19579.2  p50=20667.2  p95=22195.8  p99=22445.9
+tps: mean=84.5  p50=84.6  p95=85.3  p99=85.5
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.2  p50=6.7  p95=8.0  p99=9.5
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.2  p50=12.1  p95=12.3  p99=12.4
+mistral:7b  conc=16
+
+=== mistral:7b  (dur=120s, conc=16) ===
+Requests OK/Total: 60/60  |  Errors: 0
+RPS: 0.37   System TPS: 83.77
+ttft_ms: mean=35303.5  p50=39902.4  p95=42431.5  p99=42840.1
+e2e_ms: mean=37986.4  p50=42687.8  p95=45339.8  p99=45461.8
+tps: mean=84.5  p50=84.6  p95=85.0  p99=85.1
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.2  p50=6.8  p95=7.8  p99=8.3
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.2  p99=12.3
+mistral:7b  conc=32
+
+=== mistral:7b  (dur=120s, conc=32) ===
+Requests OK/Total: 78/78  |  Errors: 0
+RPS: 0.39   System TPS: 83.59
+ttft_ms: mean=62527.6  p50=76251.1  p95=78533.4  p99=79304.9
+e2e_ms: mean=65031.5  p50=78423.1  p95=80850.8  p99=81823.3
+tps: mean=84.6  p50=84.7  p95=85.2  p99=85.4
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.1  p50=6.7  p95=7.6  p99=7.9
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.8
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+mistral:7b  conc=64
+
+=== mistral:7b  (dur=120s, conc=64) ===
+Requests OK/Total: 107/107  |  Errors: 0
+RPS: 0.37   System TPS: 83.30
+ttft_ms: mean=119767.3  p50=143795.8  p95=171118.2  p99=171602.0
+e2e_ms: mean=122401.6  p50=146812.3  p95=173827.7  p99=174245.5
+tps: mean=84.5  p50=84.6  p95=85.0  p99=85.5
+tpot_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+prefill_ms: mean=6.1  p50=6.7  p95=7.6  p99=8.1
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.8  p99=11.9
+itl_p95_ms: mean=12.1  p50=12.1  p95=12.3  p99=12.4
+gemma2:27b   conc=1
+
+=== gemma2:27b  (dur=120s, conc=1) ===
+Requests OK/Total: 16/16  |  Errors: 0
+RPS: 0.13   System TPS: 24.08
+ttft_ms: mean=529.5  p50=137.2  p95=1723.2  p99=5508.6
+e2e_ms: mean=7737.5  p50=7970.6  p95=10654.9  p99=11955.6
+tps: mean=25.6  p50=25.6  p95=25.8  p99=25.9
+tpot_ms: mean=39.0  p50=39.0  p95=39.2  p99=39.2
+prefill_ms: mean=22.6  p50=12.0  p95=60.3  p99=154.5
+itl_mean_ms: mean=38.8  p50=38.9  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.2  p95=41.5  p99=41.6
+gemma2:27b   conc=2
+
+=== gemma2:27b  (dur=120s, conc=2) ===
+Requests OK/Total: 21/21  |  Errors: 0
+RPS: 0.16   System TPS: 25.64
+ttft_ms: mean=6031.5  p50=5427.8  p95=10101.8  p99=10108.4
+e2e_ms: mean=12406.5  p50=10134.8  p95=19805.0  p99=19840.4
+tps: mean=25.7  p50=25.7  p95=25.9  p99=25.9
+tpot_ms: mean=38.9  p50=38.9  p95=39.2  p99=39.2
+prefill_ms: mean=9.6  p50=11.3  p95=15.2  p99=15.7
+itl_mean_ms: mean=38.7  p50=38.7  p95=38.9  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.0  p95=41.4  p99=41.4
+gemma2:27b   conc=4
+
+=== gemma2:27b  (dur=120s, conc=4) ===
+Requests OK/Total: 20/20  |  Errors: 0
+RPS: 0.14   System TPS: 25.54
+ttft_ms: mean=19478.1  p50=20228.6  p95=25528.9  p99=25788.8
+e2e_ms: mean=26427.6  p50=29094.8  p95=34338.5  p99=35242.0
+tps: mean=25.6  p50=25.6  p95=25.8  p99=25.8
+tpot_ms: mean=39.0  p50=39.0  p95=39.2  p99=39.3
+prefill_ms: mean=11.2  p50=11.6  p95=12.8  p99=12.9
+itl_mean_ms: mean=38.8  p50=38.8  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.3  p50=41.3  p95=41.7  p99=41.8
+gemma2:27b   conc=8
+
+=== gemma2:27b  (dur=120s, conc=8) ===
+Requests OK/Total: 23/23  |  Errors: 0
+RPS: 0.13   System TPS: 25.57
+ttft_ms: mean=44717.8  p50=53772.3  p95=63625.2  p99=64138.9
+e2e_ms: mean=52101.8  p50=58105.6  p95=69546.8  p99=73046.7
+tps: mean=25.7  p50=25.7  p95=25.9  p99=25.9
+tpot_ms: mean=38.9  p50=38.9  p95=39.2  p99=39.2
+prefill_ms: mean=11.1  p50=11.9  p95=14.0  p99=14.4
+itl_mean_ms: mean=38.7  p50=38.7  p95=38.9  p99=39.0
+itl_p95_ms: mean=41.0  p50=41.1  p95=41.5  p99=41.6
+gemma2:27b   conc=16
+
+=== gemma2:27b  (dur=120s, conc=16) ===
+Requests OK/Total: 34/34  |  Errors: 0
+RPS: 0.14   System TPS: 25.55
+ttft_ms: mean=79992.9  p50=93743.2  p95=122014.8  p99=123163.3
+e2e_ms: mean=87047.6  p50=98977.3  p95=127678.1  p99=131555.1
+tps: mean=25.7  p50=25.7  p95=25.9  p99=25.9
+tpot_ms: mean=38.9  p50=38.9  p95=39.2  p99=39.2
+prefill_ms: mean=11.5  p50=12.1  p95=14.2  p99=15.3
+itl_mean_ms: mean=38.8  p50=38.8  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.1  p95=41.4  p99=41.4
+gemma2:27b   conc=32
+
+=== gemma2:27b  (dur=120s, conc=32) ===
+Requests OK/Total: 50/50  |  Errors: 0
+RPS: 0.15   System TPS: 25.50
+ttft_ms: mean=144639.8  p50=167223.8  p95=220723.7  p99=221341.2
+e2e_ms: mean=151386.9  p50=174797.9  p95=226452.9  p99=227250.3
+tps: mean=25.7  p50=25.7  p95=25.9  p99=26.0
+tpot_ms: mean=39.0  p50=39.0  p95=39.2  p99=39.2
+prefill_ms: mean=10.8  p50=11.9  p95=12.7  p99=14.3
+itl_mean_ms: mean=38.8  p50=38.8  p95=39.0  p99=39.0
+itl_p95_ms: mean=41.1  p50=41.2  p95=41.5  p99=41.5
+gemma2:27b   conc=64
+
+=== gemma2:27b  (dur=120s, conc=64) ===
+Requests OK/Total: 79/79  |  Errors: 0
+RPS: 0.14   System TPS: 25.46
+ttft_ms: mean=271113.4  p50=278819.8  p95=456285.1  p99=460318.8
+e2e_ms: mean=278248.3  p50=288681.9  p95=461975.1  p99=470235.5
+tps: mean=25.7  p50=25.6  p95=25.9  p99=26.0
+tpot_ms: mean=39.0  p50=39.0  p95=39.3  p99=39.3
+prefill_ms: mean=10.9  p50=11.9  p95=13.0  p99=15.0
+itl_mean_ms: mean=38.8  p50=38.9  p95=39.0  p99=39.1
+itl_p95_ms: mean=41.1  p50=41.1  p95=41.5  p99=41.7
+qwen2.5:14b   conc=1
+
+=== qwen2.5:14b  (dur=120s, conc=1) ===
+Requests OK/Total: 19/19  |  Errors: 0
+RPS: 0.16   System TPS: 39.58
+ttft_ms: mean=326.2  p50=98.9  p95=545.2  p99=3690.9
+e2e_ms: mean=6328.2  p50=6220.3  p95=6707.9  p99=9852.7
+tps: mean=41.6  p50=41.6  p95=41.9  p99=42.0
+tpot_ms: mean=24.1  p50=24.1  p95=24.2  p99=24.2
+prefill_ms: mean=21.8  p50=13.6  p95=33.5  p99=152.5
+itl_mean_ms: mean=24.0  p50=24.0  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.8  p50=25.8  p95=26.1  p99=26.1
+qwen2.5:14b   conc=2
+
+=== qwen2.5:14b  (dur=120s, conc=2) ===
+Requests OK/Total: 21/21  |  Errors: 0
+RPS: 0.17   System TPS: 41.46
+ttft_ms: mean=5811.3  p50=6204.7  p95=6271.8  p99=6332.2
+e2e_ms: mean=11753.8  p50=12312.6  p95=12400.3  p99=12483.9
+tps: mean=41.6  p50=41.6  p95=42.0  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.2  p50=14.2  p95=15.5  p99=15.5
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.6  p95=26.0  p99=26.0
+qwen2.5:14b   conc=4
+
+=== qwen2.5:14b  (dur=120s, conc=4) ===
+Requests OK/Total: 24/24  |  Errors: 0
+RPS: 0.17   System TPS: 41.42
+ttft_ms: mean=16185.7  p50=17311.9  p95=18593.7  p99=18749.7
+e2e_ms: mean=22028.3  p50=23407.3  p95=24746.8  p99=24866.4
+tps: mean=41.6  p50=41.7  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=12.3  p50=13.7  p95=14.6  p99=14.7
+itl_mean_ms: mean=23.9  p50=24.0  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.5  p95=25.9  p99=25.9
+qwen2.5:14b   conc=8
+
+=== qwen2.5:14b  (dur=120s, conc=8) ===
+Requests OK/Total: 28/28  |  Errors: 0
+RPS: 0.17   System TPS: 41.47
+ttft_ms: mean=35537.8  p50=40917.2  p95=42004.0  p99=42872.6
+e2e_ms: mean=41424.3  p50=46876.6  p95=48087.7  p99=48113.7
+tps: mean=41.7  p50=41.7  p95=42.0  p99=42.1
+tpot_ms: mean=24.0  p50=24.0  p95=24.1  p99=24.1
+prefill_ms: mean=13.6  p50=14.0  p95=16.3  p99=16.6
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.0  p99=24.0
+itl_p95_ms: mean=25.4  p50=25.5  p95=25.7  p99=25.8
+qwen2.5:14b   conc=16
+
+=== qwen2.5:14b  (dur=120s, conc=16) ===
+Requests OK/Total: 36/36  |  Errors: 0
+RPS: 0.17   System TPS: 41.29
+ttft_ms: mean=69658.2  p50=87772.4  p95=90387.2  p99=90621.8
+e2e_ms: mean=75584.1  p50=93894.4  p95=96509.5  p99=96755.3
+tps: mean=41.6  p50=41.6  p95=41.9  p99=41.9
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=14.0  p50=14.0  p95=17.4  p99=18.9
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.6  p50=25.6  p95=26.0  p99=26.1
+qwen2.5:14b   conc=32
+
+=== qwen2.5:14b  (dur=120s, conc=32) ===
+Requests OK/Total: 51/51  |  Errors: 0
+RPS: 0.17   System TPS: 41.29
+ttft_ms: mean=128193.3  p50=152898.9  p95=186844.7  p99=187730.9
+e2e_ms: mean=134126.1  p50=159024.4  p95=191971.5  p99=193837.0
+tps: mean=41.6  p50=41.7  p95=41.9  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.5  p50=13.9  p95=14.9  p99=16.1
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.5  p50=25.5  p95=26.0  p99=26.1
+qwen2.5:14b   conc=64
+
+=== qwen2.5:14b  (dur=120s, conc=64) ===
+Requests OK/Total: 84/84  |  Errors: 0
+RPS: 0.17   System TPS: 41.26
+ttft_ms: mean=231754.0  p50=247379.8  p95=374377.9  p99=374863.6
+e2e_ms: mean=237617.7  p50=252881.8  p95=380490.0  p99=380760.4
+tps: mean=41.7  p50=41.7  p95=41.9  p99=42.0
+tpot_ms: mean=24.0  p50=24.0  p95=24.2  p99=24.2
+prefill_ms: mean=13.3  p50=14.0  p95=15.0  p99=15.3
+itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
+itl_p95_ms: mean=25.4  p50=25.5  p95=25.9  p99=26.0
+Completed Concurrent Requests to LLMs !
