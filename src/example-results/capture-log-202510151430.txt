@@ -1094,3 +1094,596 @@ prefill_ms: mean=13.3  p50=14.0  p95=15.0  p99=15.3
 itl_mean_ms: mean=23.9  p50=23.9  p95=24.1  p99=24.1
 itl_p95_ms: mean=25.4  p50=25.5  p95=25.9  p99=26.0
 Completed Concurrent Requests to LLMs !
+
+
+
+=======DATE 10/21/2025=================================
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$ ./benchmark_single_user.sh
+
+=== gpt-oss:20b  (dur=60s, conc=1) ===
+Requests OK/Total: 14/14  |  Errors: 0
+RPS: 0.22   System TPS: 50.22
+ttft_ms: mean=1562.9  p50=1392.1  p95=3105.0  p99=4675.4
+e2e_ms: mean=4522.9  p50=4653.7  p95=6316.7  p99=8614.7
+tps: mean=58.5  p50=58.6  p95=58.8  p99=58.9
+tpot_ms: mean=17.1  p50=17.1  p95=17.2  p99=17.2
+prefill_ms: mean=251.6  p50=248.6  p95=421.8  p99=657.2
+itl_mean_ms: mean=17.6  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.7  p50=18.7  p95=19.5  p99=19.6
+
+=== yi:34b  (dur=60s, conc=1) ===
+Requests OK/Total: 5/5  |  Errors: 0
+RPS: 0.08   System TPS: 20.25
+ttft_ms: mean=1391.9  p50=126.2  p95=5255.6  p99=6281.1
+e2e_ms: mean=12565.5  p50=11368.9  p95=16471.8  p99=17491.6
+tps: mean=22.6  p50=22.7  p95=22.7  p99=22.7
+tpot_ms: mean=44.2  p50=44.1  p95=44.3  p99=44.3
+prefill_ms: mean=45.8  p50=15.6  p95=145.1  p99=170.9
+itl_mean_ms: mean=43.9  p50=43.9  p95=43.9  p99=43.9
+itl_p95_ms: mean=45.1  p50=45.1  p95=45.2  p99=45.2
+
+=== llama3.1:8b  (dur=60s, conc=1) ===
+Requests OK/Total: 18/18  |  Errors: 0
+RPS: 0.28   System TPS: 67.88
+ttft_ms: mean=288.2  p50=81.7  p95=645.8  p99=3169.8
+e2e_ms: mean=3510.7  p50=3427.9  p95=4134.1  p99=6659.3
+tps: mean=73.6  p50=73.7  p95=74.5  p99=74.5
+tpot_ms: mean=13.6  p50=13.6  p95=13.7  p99=13.7
+prefill_ms: mean=15.5  p50=6.8  p95=33.4  p99=143.1
+itl_mean_ms: mean=13.5  p50=13.5  p95=13.6  p99=13.6
+itl_p95_ms: mean=14.5  p50=14.5  p95=15.0  p99=15.0
+
+=== mistral:7b  (dur=60s, conc=1) ===
+Requests OK/Total: 21/21  |  Errors: 0
+RPS: 0.35   System TPS: 79.25
+ttft_ms: mean=185.2  p50=36.4  p95=45.2  p99=2532.8
+e2e_ms: mean=2853.2  p50=2771.4  p95=3081.5  p99=4982.7
+tps: mean=84.4  p50=84.4  p95=84.9  p99=85.1
+tpot_ms: mean=11.9  p50=11.9  p95=11.9  p99=12.0
+prefill_ms: mean=15.0  p50=6.8  p95=16.8  p99=140.1
+itl_mean_ms: mean=11.8  p50=11.8  p95=11.9  p99=11.9
+itl_p95_ms: mean=12.2  p50=12.2  p95=12.4  p99=12.5
+
+=== gemma2:27b  (dur=60s, conc=1) ===
+Requests OK/Total: 8/8  |  Errors: 0
+RPS: 0.13   System TPS: 21.09
+ttft_ms: mean=953.8  p50=123.4  p95=4448.1  p99=6308.6
+e2e_ms: mean=7732.1  p50=6061.1  p95=15190.1  p99=17070.0
+tps: mean=24.0  p50=24.0  p95=24.1  p99=24.2
+tpot_ms: mean=41.7  p50=41.7  p95=42.1  p99=42.2
+prefill_ms: mean=53.4  p50=10.2  p95=223.4  p99=298.9
+itl_mean_ms: mean=41.7  p50=41.6  p95=42.0  p99=42.0
+itl_p95_ms: mean=42.8  p50=42.8  p95=43.0  p99=43.0
+
+=== qwen2.5:14b  (dur=60s, conc=1) ===
+Requests OK/Total: 9/9  |  Errors: 0
+RPS: 0.14   System TPS: 34.07
+ttft_ms: mean=741.0  p50=95.5  p95=3433.6  p99=4786.0
+e2e_ms: mean=7172.6  p50=6813.7  p95=9860.4  p99=11451.0
+tps: mean=38.0  p50=38.0  p95=38.2  p99=38.2
+tpot_ms: mean=26.3  p50=26.3  p95=26.5  p99=26.6
+prefill_ms: mean=58.5  p50=27.6  p95=201.7  p99=287.3
+itl_mean_ms: mean=26.3  p50=26.3  p95=26.5  p99=26.5
+itl_p95_ms: mean=27.3  p50=27.3  p95=27.5  p99=27.5
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$
+
+
+
+
+
+=============DATE 10/22/2025================
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$ ./benchmark_concurrent_users.sh
+Starting Concurrent Requests to LLMs
+gpt-oss:20b  conc=1
+
+=== gpt-oss:20b  (dur=120s, conc=1) ===
+Requests OK/Total: 27/27  |  Errors: 0
+RPS: 0.22   System TPS: 52.69
+ttft_ms: mean=1211.3  p50=1147.2  p95=1801.6  p99=4335.6
+e2e_ms: mean=4574.4  p50=4661.5  p95=4749.9  p99=8028.3
+tps: mean=58.5  p50=58.5  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=205.8  p50=210.1  p95=259.6  p99=590.0
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.9
+itl_p95_ms: mean=18.2  p50=18.0  p95=19.0  p99=19.1
+gpt-oss:20b  conc=2
+
+=== gpt-oss:20b  (dur=120s, conc=2) ===
+Requests OK/Total: 30/30  |  Errors: 0
+RPS: 0.23   System TPS: 55.63
+ttft_ms: mean=5099.5  p50=5123.3  p95=6300.5  p99=6315.1
+e2e_ms: mean=8372.6  p50=8416.0  p95=9218.5  p99=9333.5
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=204.1  p50=209.9  p95=258.5  p99=258.5
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.7  p99=17.8
+itl_p95_ms: mean=18.1  p50=18.0  p95=18.5  p99=19.2
+gpt-oss:20b  conc=4
+
+
+=== gpt-oss:20b  (dur=120s, conc=4) ===
+Requests OK/Total: 31/31  |  Errors: 0
+RPS: 0.22   System TPS: 55.60
+ttft_ms: mean=13596.5  p50=14321.0  p95=15470.8  p99=15526.0
+e2e_ms: mean=16945.9  p50=18106.4  p95=18488.4  p99=18540.2
+tps: mean=58.5  p50=58.5  p95=58.7  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=207.4  p50=248.6  p95=258.5  p99=258.6
+itl_mean_ms: mean=17.4  p50=17.5  p95=17.7  p99=17.7
+itl_p95_ms: mean=18.0  p50=18.0  p95=18.4  p99=18.5
+gpt-oss:20b  conc=8
+
+=== gpt-oss:20b  (dur=120s, conc=8) ===
+Requests OK/Total: 35/35  |  Errors: 0
+RPS: 0.23   System TPS: 55.46
+ttft_ms: mean=28761.6  p50=31145.0  p95=33434.6  p99=33819.2
+e2e_ms: mean=31405.0  p50=34114.2  p95=36738.0  p99=36818.6
+tps: mean=58.6  p50=58.6  p95=58.7  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=211.5  p50=248.6  p95=258.8  p99=259.4
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.1  p50=18.0  p95=18.8  p99=19.5
+gpt-oss:20b  conc=16
+
+=== gpt-oss:20b  (dur=120s, conc=16) ===
+Requests OK/Total: 43/43  |  Errors: 0
+RPS: 0.23   System TPS: 55.57
+ttft_ms: mean=53913.3  p50=64366.6  p95=67378.4  p99=67580.5
+e2e_ms: mean=56885.0  p50=67402.1  p95=70602.6  p99=70764.5
+tps: mean=58.5  p50=58.5  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.2  p99=17.2
+prefill_ms: mean=192.3  p50=210.0  p95=258.5  p99=259.2
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.3  p50=18.1  p95=19.1  p99=19.5
+gpt-oss:20b  conc=32
+
+=== gpt-oss:20b  (dur=120s, conc=32) ===
+Requests OK/Total: 60/60  |  Errors: 0
+RPS: 0.24   System TPS: 55.52
+ttft_ms: mean=91349.3  p50=109706.2  p95=136166.3  p99=136453.1
+e2e_ms: mean=100290.0  p50=126660.3  p95=139466.1  p99=139500.8
+tps: mean=58.6  p50=58.6  p95=58.8  p99=58.8
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.2
+prefill_ms: mean=185.1  p50=229.3  p95=258.5  p99=259.2
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.8  p99=17.8
+itl_p95_ms: mean=18.4  p50=18.3  p95=19.4  p99=19.6
+gpt-oss:20b  conc=64
+
+=== gpt-oss:20b  (dur=120s, conc=64) ===
+Requests OK/Total: 6/180477  |  Errors: 180471
+RPS: 0.05   System TPS: 12.80
+ttft_ms: mean=13555.4  p50=14173.4  p95=23168.0  p99=23878.1
+e2e_ms: mean=17491.0  p50=18219.8  p95=27045.1  p99=27897.6
+tps: mean=58.6  p50=58.6  p95=58.7  p99=58.7
+tpot_ms: mean=17.1  p50=17.1  p95=17.1  p99=17.1
+prefill_ms: mean=149.7  p50=196.7  p95=241.1  p99=249.4
+itl_mean_ms: mean=17.5  p50=17.5  p95=17.5  p99=17.5
+itl_p95_ms: mean=18.3  p50=18.2  p95=19.1  p99=19.3
+yi:34b  conc=1
+
+=== yi:34b  (dur=120s, conc=1) ===
+Requests OK/Total: 0/237307  |  Errors: 237307
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=2
+
+=== yi:34b  (dur=120s, conc=2) ===
+Requests OK/Total: 0/210207  |  Errors: 210207
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=4
+
+=== yi:34b  (dur=120s, conc=4) ===
+Requests OK/Total: 0/214451  |  Errors: 214451
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=8
+
+=== yi:34b  (dur=120s, conc=8) ===
+Requests OK/Total: 0/222013  |  Errors: 222013
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=16
+
+=== yi:34b  (dur=120s, conc=16) ===
+Requests OK/Total: 0/230763  |  Errors: 230763
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=32
+
+=== yi:34b  (dur=120s, conc=32) ===
+Requests OK/Total: 0/238864  |  Errors: 238864
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+yi:34b  conc=64
+
+=== yi:34b  (dur=120s, conc=64) ===
+Requests OK/Total: 0/240657  |  Errors: 240657
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=1
+
+=== llama3.1:8b  (dur=120s, conc=1) ===
+Requests OK/Total: 0/235213  |  Errors: 235213
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=2
+
+=== llama3.1:8b  (dur=120s, conc=2) ===
+Requests OK/Total: 0/209279  |  Errors: 209279
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=4
+
+=== llama3.1:8b  (dur=120s, conc=4) ===
+Requests OK/Total: 0/214815  |  Errors: 214815
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=8
+
+=== llama3.1:8b  (dur=120s, conc=8) ===
+Requests OK/Total: 0/222995  |  Errors: 222995
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=16
+
+=== llama3.1:8b  (dur=120s, conc=16) ===
+Requests OK/Total: 0/230761  |  Errors: 230761
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=32
+
+=== llama3.1:8b  (dur=120s, conc=32) ===
+Requests OK/Total: 0/238713  |  Errors: 238713
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+llama3.1:8b  conc=64
+
+=== llama3.1:8b  (dur=120s, conc=64) ===
+Requests OK/Total: 0/240447  |  Errors: 240447
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=1
+
+
+
+=== mistral:7b  (dur=120s, conc=1) ===
+Requests OK/Total: 0/237268  |  Errors: 237268
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=2
+
+=== mistral:7b  (dur=120s, conc=2) ===
+Requests OK/Total: 0/211744  |  Errors: 211744
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=4
+
+=== mistral:7b  (dur=120s, conc=4) ===
+Requests OK/Total: 0/214852  |  Errors: 214852
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=8
+
+=== mistral:7b  (dur=120s, conc=8) ===
+Requests OK/Total: 0/218281  |  Errors: 218281
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=16
+
+=== mistral:7b  (dur=120s, conc=16) ===
+Requests OK/Total: 0/230687  |  Errors: 230687
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=32
+
+=== mistral:7b  (dur=120s, conc=32) ===
+Requests OK/Total: 0/236219  |  Errors: 236219
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+mistral:7b  conc=64
+
+=== mistral:7b  (dur=120s, conc=64) ===
+Requests OK/Total: 0/239883  |  Errors: 239883
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=1
+
+=== gemma2:27b  (dur=120s, conc=1) ===
+Requests OK/Total: 0/235057  |  Errors: 235057
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=2
+
+=== gemma2:27b  (dur=120s, conc=2) ===
+Requests OK/Total: 0/211695  |  Errors: 211695
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=4
+
+=== gemma2:27b  (dur=120s, conc=4) ===
+Requests OK/Total: 0/214197  |  Errors: 214197
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=8
+
+=== gemma2:27b  (dur=120s, conc=8) ===
+Requests OK/Total: 0/219848  |  Errors: 219848
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=16
+
+=== gemma2:27b  (dur=120s, conc=16) ===
+Requests OK/Total: 0/234317  |  Errors: 234317
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=32
+
+=== gemma2:27b  (dur=120s, conc=32) ===
+Requests OK/Total: 0/241131  |  Errors: 241131
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+gemma2:27b   conc=64
+
+=== gemma2:27b  (dur=120s, conc=64) ===
+Requests OK/Total: 0/240795  |  Errors: 240795
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=1
+
+=== qwen2.5:14b  (dur=120s, conc=1) ===
+Requests OK/Total: 0/236101  |  Errors: 236101
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=2
+
+=== qwen2.5:14b  (dur=120s, conc=2) ===
+Requests OK/Total: 0/208458  |  Errors: 208458
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=4
+
+=== qwen2.5:14b  (dur=120s, conc=4) ===
+Requests OK/Total: 0/213987  |  Errors: 213987
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=8
+
+=== qwen2.5:14b  (dur=120s, conc=8) ===
+Requests OK/Total: 0/220451  |  Errors: 220451
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=16
+
+=== qwen2.5:14b  (dur=120s, conc=16) ===
+Requests OK/Total: 0/231835  |  Errors: 231835
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=32
+
+=== qwen2.5:14b  (dur=120s, conc=32) ===
+Requests OK/Total: 0/239569  |  Errors: 239569
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+qwen2.5:14b   conc=64
+
+=== qwen2.5:14b  (dur=120s, conc=64) ===
+Requests OK/Total: 0/241228  |  Errors: 241228
+RPS: –   System TPS: –
+ttft_ms: –
+e2e_ms: –
+tps: –
+tpot_ms: –
+prefill_ms: –
+itl_mean_ms: –
+itl_p95_ms: –
+Completed Concurrent Requests to LLMs !
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/load$
+
+
