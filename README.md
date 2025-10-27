@@ -253,3 +253,30 @@ system_tps ≤ (Σ GPUs) × (decode_tps_per_GPU) × (utilization) × (batch_effi
 
 ## RPS ##
 RPS = Requests Per Second — the rate at which your system completes requests.
+
+
+
+# Performance based on LLM correctness,logic and safety #
+
+## What to measure ?
+- Ground-Truth Accuracy
+- Chat Quality (Open Ended)
+- Safety & Faculty
+
+## Ground Truth Accuracy
+Measure logical correctness in closed ended tasks with clear answer. 
+Data sets
+1. GSM8K
+2. MMLU-Pro
+
+## Chat Quality (Open Ended)
+Measure naturalness, helpfulness, and reasoning via LLM-as-a-judge or human pairwise evaluation
+1. AlpacaEval 2.0,
+2. MT-Bench
+
+## Safety & Faculty
+Measure hallucinations and toxicity rates
+1. RealToxicityPrompts
+
+
+
