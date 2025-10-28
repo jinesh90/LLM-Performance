@@ -1,0 +1,12 @@
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_mistral_7b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_mistral_7b.jsonl
+Examples      : 1318
+Correct       : 569
+Accuracy      : 43.17%
+Avg E2E (ms)  : 2885.46
+p95 E2E (ms)  : 5313.71
+---------------------------
+
