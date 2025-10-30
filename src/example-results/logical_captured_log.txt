@@ -1,3 +1,5 @@
+========================== 1 =========================
+
 ((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_mistral_7b.jsonl
 
 📊 GSM8K Evaluation Results
@@ -9,4 +11,44 @@ Accuracy      : 43.17%
 Avg E2E (ms)  : 2885.46
 p95 E2E (ms)  : 5313.71
 ---------------------------
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_gpt-oss_20b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_gpt-oss_20b.jsonl
+Examples      : 1121
+Correct       : 849
+Accuracy      : 75.74%
+Avg E2E (ms)  : 6176.65
+p95 E2E (ms)  : 9196.02
+---------------------------
+
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_llama3.1_8b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_llama3.1_8b.jsonl
+Examples      : 1319
+Correct       : 1116
+Accuracy      : 84.61%
+Avg E2E (ms)  : 3539.63
+p95 E2E (ms)  : 6535.74
+---------------------------
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_yi_34b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_yi_34b.jsonl
+Examples      : 1319
+Correct       : 979
+Accuracy      : 74.22%
+Avg E2E (ms)  : 9668.57
+p95 E2E (ms)  : 17839.48
+---------------------------
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$
+
 
