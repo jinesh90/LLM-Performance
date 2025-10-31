@@ -52,3 +52,29 @@ p95 E2E (ms)  : 17839.48
 ((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical$
 
 
+ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_qwen2.5_14b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_qwen2.5_14b.jsonl
+Examples      : 1319
+Correct       : 1032
+Accuracy      : 78.24%
+Avg E2E (ms)  : 6682.57
+p95 E2E (ms)  : 11168.60
+---------------------------
+
+
+
+ubuntu@ip-172-31-34-2:~/bench/performance/logical$ python3 score_gsm8k.py --input pred_gsm8k_gemma2_27b.jsonl
+
+📊 GSM8K Evaluation Results
+---------------------------
+File          : pred_gsm8k_gemma2_27b.jsonl
+Examples      : 1319
+Correct       : 996
+Accuracy      : 75.51%
+Avg E2E (ms)  : 6256.27
+p95 E2E (ms)  : 10715.71
+---------------------------
+
