@@ -3,7 +3,7 @@ import json, openai, argparse
 from tqdm import tqdm
 
 openai.api_base = "https://api.openai.com/v1"
-# export OPENAI_API_KEY=your_key  (or adjust for Claude etc.)
+#export OPENAI_API_KEY=your_key  (or adjust for Claude etc.)
 
 def judge(prompt, ans_a, ans_b):
     question = f"""You are a strict evaluator.
@@ -21,7 +21,7 @@ INSTRUCTION:
 Which response is more helpful, accurate, and concise?
 Reply ONLY with "A", "B", or "Tie"."""
     completion = openai.ChatCompletion.create(
-        model="gpt-4-turbo",
+        model="chatgpt-4o-latest",
         messages=[{"role": "user", "content": question}],
         temperature=0.0,
     )
