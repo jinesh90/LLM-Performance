@@ -5,11 +5,11 @@ from pathlib import Path
 API = "http://127.0.0.1:11434/v1/chat/completions"
 HEADERS = {"Content-Type": "application/json"}
 
-def chat(model, messages, temperature=0.7, max_tokens=512, seed=7):
+def chat(model, messages, temperature=0.0, max_tokens=512, seed=7):
     t0 = time.time()
     r = requests.post(API, headers=HEADERS, json={
         "model": model,
-        "messages": messages,
+        "messages": [{"role": "system", "content": "Answer the user's question directly without any reasoning or thinking steps. Respond concisely with the final answer only."}] +messages,
         "temperature": temperature,
         "max_tokens": max_tokens,
         "seed": seed,
