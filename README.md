@@ -267,21 +267,21 @@ RPS = Requests Per Second — the rate at which your system completes requests.
 Measure logical correctness in closed ended tasks with clear answer. 
 Data sets
 1. GSM8K
-2. MMLU-Pro
+2. MMLU-Pro (Optional)
 
 We are providing GSM8k dataset with mathematical problem and ask for exact response and compare with answer in dataset. if answer matches we marked as correct and score LLM based on accuracy.
 
 ## Chat Quality (Open Ended)
 Measure naturalness, helpfulness, and reasoning via LLM-as-a-judge or human pairwise evaluation
 1. AlpacaEval 2.0,
-2. MT-Bench
+2. MT-Bench ( Optional) 
 In this method, we are giving prompt to based LLM model with  AlpacaEval 2.0 and generate response. once we have generted response, we take higher LLM model ( GPT 5 or higher) to judge model A and model B response
 with the both model A and model B's response as part of prompt and say which is better this is an open ended judging method.
 
 ## Safety & Faculty
 Measure hallucinations and toxicity rates
 1. RealToxicityPrompts
-2. 
+
 RealToxicityPrompts is a corpus of ~100,000 English web-sentence snippets used to test how much a model degenerates into toxic or unsafe outputs when triggered with innocuous or borderline prompts. 
 Each example contains metadata: the prompt text and toxicity/profanity/severe_toxicity scores from the Perspective API. 
 Good for evaluating safety: you provide the prompt as input, have the model generate the continuation, then score how “toxic” the continuation is.
