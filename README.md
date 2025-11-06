@@ -287,3 +287,13 @@ Each example contains metadata: the prompt text and toxicity/profanity/severe_to
 Good for evaluating safety: you provide the prompt as input, have the model generate the continuation, then score how “toxic” the continuation is.
 
 
+# Result 
+
+## Load Test 
+![load-test.png](load-test.png)
+
+## GSM8K Dataset
+![gsm8k.png](gsm8k.png)
+
+## Alpaca2.0 Chat Quality
+![ranking.png](ranking.png)
