@@ -1,5 +1,7 @@
 =============================GPT 5 as judge =====================
 
+
+1) # OSS as model A
 ((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_gpt-oss_20b.jsonl --b pred_alpacaeval2_yi_34b.jsonl
 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [07:24<00:00,  1.81it/s]
 
@@ -39,6 +41,88 @@ ModelA vs ModelB results (805 prompts):
 A wins=658, B wins=93, ties=54
 Win-rate for A = 85.09%
 
+2) # mistral as model A
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_mistral_7b.jsonl --b pred_alpacaeval2_llama3.1_8b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:19<00:00,  2.12it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=554, B wins=159, ties=92
+Win-rate for A = 74.53%
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_mistral_7b.jsonl --b pred_alpacaeval2_qwen2.5_14b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [07:10<00:00,  1.87it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=494, B wins=194, ties=117
+Win-rate for A = 68.63%
+
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_mistral_7b.jsonl --b pred_alpacaeval2_yi_34b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [05:47<00:00,  2.31it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=482, B wins=211, ties=112
+Win-rate for A = 66.83%
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_mistral_7b.jsonl --b pred_alpacaeval2_gemma2_27b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [05:43<00:00,  2.35it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=679, B wins=92, ties=34
+Win-rate for A = 86.46%
+
+3) # llama as model A
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_llama3.1_8b.jsonl --b pred_alpacaeval2_yi_34b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:06<00:00,  2.20it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=302, B wins=351, ties=152
+Win-rate for A = 46.96%
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_llama3.1_8b.jsonl --b pred_alpacaeval2_gemma2_27b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:52<00:00,  1.95it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=537, B wins=148, ties=120
+Win-rate for A = 74.16%
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_llama3.1_8b.jsonl --b pred_alpacaeval2_qwen2.5_14b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:33<00:00,  2.04it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=300, B wins=339, ties=166
+Win-rate for A = 47.58%
+
+4) # Qwen as model A
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_qwen2.5_14b.jsonl --b pred_alpacaeval2_yi_34b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:35<00:00,  2.03it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=340, B wins=279, ties=186
+Win-rate for A = 53.79%
+
+
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_qwen2.5_14b.jsonl --b pred_alpacaeval2_gemma2_27b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [07:02<00:00,  1.90it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=613, B wins=98, ties=94
+Win-rate for A = 81.99%
+
+
+5)
+
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$ python3 score_alpaca.py --a pred_alpacaeval2_yi_34b.jsonl --b pred_alpacaeval2_gemma2_27b.jsonl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 805/805 [06:11<00:00,  2.17it/s]
+
+ModelA vs ModelB results (805 prompts):
+A wins=623, B wins=107, ties=75
+Win-rate for A = 82.05%
+((venv) ) ubuntu@ip-172-31-34-2:~/bench/performance/logical/alpacachat$
 
 
 
