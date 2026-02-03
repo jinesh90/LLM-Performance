@@ -1,6 +1,10 @@
 # LLM-Performance
 Compare Performance on Various Open Source LLM base models
 
+# System Design for Local LLM Inference
+![SystemDesign.jpeg](SystemDesign.jpeg)
+
+
 # OSS-20B and other open source base models / Open WebUI  on AWS g5.12xlarge
 
 This guide describes how to set up a complete local-LLM environment on an **AWS g5.12xlarge (4×A10G)** instance using **Ollama**, **Open WebUI**, and **MCPO** (Model Context Protocol OpenAPI Proxy).
