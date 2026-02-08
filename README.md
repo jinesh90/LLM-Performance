@@ -301,3 +301,9 @@ Good for evaluating safety: you provide the prompt as input, have the model gene
 
 ## Alpaca2.0 Chat Quality
 ![ranking.png](ranking.png)
+
+## TTFT, ITL, E2E, System TPS
+![ttft_ms.png](ttft_ms.png)
+![tpot_ms.png](tpot_ms.png)
+![e2e_ms.png](e2e_ms.png)
+![itl_mean_ms.png](itl_mean_ms.png)
